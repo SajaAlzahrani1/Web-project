@@ -9,7 +9,15 @@ body {
     margin: 0;
     background-color: var(--light-bg);
     transition: 0.3s;
+    /* for the sticky footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
+}
+
+main {
+    flex: 1; /* makes the main area push the footer down */
 }
 
 
@@ -44,12 +52,12 @@ nav ul {
     display: flex;
     gap: 20px;
     align-items: center;
-
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+
 
 }
 
@@ -163,4 +171,209 @@ body.night-mode {
     padding: 20px;
     background-color: var(--primary-green);
     color: white;
+}
+
+
+/* --- Gallery --- */
+.regions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    gap: 25px;
+    padding: 20px 5%;
+}
+
+.region-card {
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit; /* based on night/day mode */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block; /* Required for the <a> tag to act like a container */
+}
+
+.region-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.region-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-green);
+}
+
+.card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-info h3 {
+    margin: 0 0 10px 0;
+    color: var(--primary-green);
+}
+
+.card-info .category {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: var(--primary-green);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    margin: 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* --- Search & Filter Inputs --- */
+#search-input, #region-filter {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 250px;
+}
+
+
+/* --- Night Mode New Elements --- */
+.night-mode .region-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+.night-mode .card-info h3 {
+    color: #afd4ac;
+}
+
+.night-mode .card-info p {
+    color: #bbb;
+}
+
+.night-mode .card-info .category {
+    background-color: #2a3b30;
+    color: #afd4ac;
+}
+
+.night-mode #search-input, .night-mode #region-filter {
+    background-color: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+
+/* --- Details Page --- */
+.details-page-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+}
+
+.details-card-large {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    max-width: 1200px;
+    width: 100%;
+}
+
+.details-main-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 4px solid var(--primary-green);
+}
+
+.details-card-content {
+    padding: 40px;
+}
+
+.category-badge {
+    background-color: #e8f5e9;
+    color: var(--primary-green);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.details-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.info-title {
+    color: var(--primary-green);
+    border-bottom: 2px solid #e8f5e9;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.info-column ul {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    padding-right: 20px; 
+}
+
+.mini-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 15px;
+}
+
+.mini-gallery img {
+    width: 100%;
+    flex: 1;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 200px;
+    transition: transform 0.3s;
+
+}
+
+.mini-gallery img:hover {
+    transform: scale(1.02);
+}
+
+/* --- Night Mode Details Card --- */
+.night-mode .details-card-large {
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.night-mode .details-description {
+    color: #ddd;
+}
+
+.night-mode .info-grid {
+    background-color: #2a2a2a;
+}
+
+.night-mode .category-badge {
+    background-color: #2a3b30;
+    color: #afd4ac;
+}
+
+.night-mode .info-title {
+    border-bottom-color: #444;
+    color: #afd4ac;
 }
