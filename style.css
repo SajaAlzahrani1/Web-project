@@ -1,0 +1,166 @@
+:root {
+    --primary-green: #1a5e3a;
+    --dark-bg: #121212;
+    --light-bg: #fafafa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--light-bg);
+    transition: 0.3s;
+
+}
+
+
+.night-mode {
+    background-color: var(--dark-bg);
+    color: white;
+
+}
+
+.night-mode .feature-card {
+    background-color: #1e1e1e;
+    color: white;
+
+}
+
+header {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 1rem 0;
+
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+
+}
+
+nav ul li a:hover {
+    color: rgb(244, 243, 243);
+    text-shadow: 15px 20px 15px 15px rgba(244, 243, 243, 0.792);
+
+}
+
+#night-mode-btn {
+    font-family: inherit;
+    background-color: #1a3020;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 0 10px 5px rgb(26, 48, 32);
+    padding: 13px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#night-mode-btn:hover {
+    background-color: rgba(255, 255, 255, 0.59);
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.323);
+    color: var(--primary-green);
+}
+
+.night-mode #night-mode-btn {
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.1);
+    background-color: #afd4ac;
+    color: #2c3e50;
+}
+
+.night-mode #night-mode-btn:hover {
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.323);
+    background-color: #c2e0c6e1;
+}
+
+.hero {
+    background-color: #e8f5e9;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+
+}
+
+.hero-image img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+body.night-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.night-mode .hero {
+    background-color: #272929;
+    color: white;
+
+}
+
+.btn-main {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+
+}
+
+.btn-main:hover {
+    background-color: #1e5c3a;
+    box-shadow: 0 0 10px 5px rgba(26, 92, 58, 0.287);
+}
+
+.night-mode .btn-main:hover {
+    background-color: #1e5c3a;
+    box-shadow: 0 0 10px 5px rgba(228, 248, 237, 0.401);
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+
+}
+
+.feature-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+#footer-tag {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-green);
+    color: white;
+}
