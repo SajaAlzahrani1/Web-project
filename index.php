@@ -25,7 +25,7 @@
     <main>
         <section class="hero">
             <div class="hero-image">
-                 <img id="main-image" src="images\قلب-الرياض1.jpg" alt="قلب الرياض">
+                 <img id="main-image" src="images\ksa.jpg" alt="الرياض">
             </div>
             <div class="hero-content">
                 <h1 id="welcome-heading">أهلاً وسهلاً</h1>
