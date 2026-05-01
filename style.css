@@ -377,3 +377,221 @@ body.night-mode {
     border-bottom-color: #444;
     color: #afd4ac;
 }
+
+
+/* --- Admin Login --- */
+.login-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: #f0f0f0;
+}
+
+.login-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    width: 420px;
+    overflow: hidden;
+}
+
+.login-box-header {
+    background: linear-gradient(135deg, #1a5e3a, #2e8b57);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.login-box-body {
+    padding: 30px;
+}
+
+.login-box label {
+    display: block;
+    text-align: right;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #145230;
+}
+
+.error-msg {
+    color: red;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+/* --- Night Mode Admin Login --- */
+.night-mode .login-main {
+    background-color: #1a1a1a;
+}
+
+.night-mode .login-box {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.night-mode .login-box-body {
+    background-color: #1e1e1e;
+}
+
+.night-mode .login-box label {
+    color: white;
+}
+
+.night-mode .login-box input {
+    background-color: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+
+/* --- Dashboard --- */
+.dashboard-main {
+    padding: 30px 5%;
+}
+
+.success-msg {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.dashboard-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.dashboard-container h2 {
+    color: var(--primary-green);
+    text-align: right;
+}
+
+.btn-add {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.btn-add:hover {
+    background-color: #145230;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-logout:hover {
+    background-color: #b02a37;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.dashboard-table th, .dashboard-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: right;
+}
+
+.dashboard-table th {
+    background: linear-gradient(135deg, #1a5e3a, #2e8b57);
+    color: white;
+}
+
+.dashboard-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.btn-edit {
+    background-color: #2e8b57;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.btn-edit:hover {
+    background-color: #1a5e3a;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.btn-delete:hover {
+    background-color: #b02a37;
+}
+
+/* --- Night Mode Dashboard --- */
+.night-mode .dashboard-container {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.night-mode .dashboard-table th {
+    background: linear-gradient(135deg, #1a5e3a, #2e8b57);
+    color: white;
+}
+
+.night-mode .dashboard-table td {
+    border-color: #444;
+    color: white;
+}
+
+.night-mode .dashboard-table tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+.night-mode .success-msg {
+    background-color: #1e3a2a;
+    color: #afd4ac;
+}
