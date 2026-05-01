@@ -1,3 +1,4 @@
+
 function toggleNightMode() {
     var element = document.body;
     element.classList.toggle('night-mode');
@@ -6,13 +7,24 @@ function toggleNightMode() {
 
     if (element.classList.contains("night-mode")) {
         btn.innerHTML = "الوضع النهاري";
+        localStorage.setItem('nightMode', 'enabled'); // save state
     } else {
         btn.innerHTML = "الوضع الليلي";
+        localStorage.setItem('nightMode', 'disabled'); // save state
     }
 }
 
+// When page loads, check saved state and apply it
+window.onload = function() {
+    if (localStorage.getItem('nightMode') === 'enabled') {
+        document.body.classList.add('night-mode');
+        var btn = document.getElementById("night-mode-btn");
+        if (btn) btn.innerHTML = "الوضع النهاري";
+    }
+}
+
+// Update gallery based on search and filter
 function updateGallery() {
-    // both search inputs
     let searchText = document.getElementById('search-input').value.trim();
     let filterValue = document.getElementById('region-filter').value;
     
@@ -32,7 +44,7 @@ function updateGallery() {
             card.style.display = 'block';
             visibleCount++;
         } else {
-            card.style.display = 'none';  // hide card
+            card.style.display = 'none'; // hide card
         }
     });
 
