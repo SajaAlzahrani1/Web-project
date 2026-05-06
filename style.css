@@ -17,7 +17,8 @@ body {
 }
 
 main {
-    flex: 1; /* makes the main area push the footer down */
+    flex: 1;
+    /* makes the main area push the footer down */
 }
 
 
@@ -188,9 +189,11 @@ body.night-mode {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    color: inherit; /* based on night/day mode */
+    color: inherit;
+    /* based on night/day mode */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block; /* Required for the <a> tag to act like a container */
+    display: block;
+    /* Required for the <a> tag to act like a container */
 }
 
 .region-card:hover {
@@ -232,7 +235,8 @@ body.night-mode {
 }
 
 /* --- Search & Filter Inputs --- */
-#search-input, #region-filter {
+#search-input,
+#region-filter {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -261,7 +265,8 @@ body.night-mode {
     color: #afd4ac;
 }
 
-.night-mode #search-input, .night-mode #region-filter {
+.night-mode #search-input,
+.night-mode #region-filter {
     background-color: #2a2a2a;
     color: white;
     border-color: #444;
@@ -312,6 +317,74 @@ body.night-mode {
     margin-bottom: 40px;
 }
 
+
+
+.activities-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    margin-top: 15px;
+}
+
+.activity-badge {
+    background-color: #e8f5e9 !important;
+    color: #1a5d3b !important;
+    padding: 8px 18px !important;
+    border-radius: 50px !important;
+    font-weight: bold;
+    border: 1.5px solid #1a5d3b !important;
+    display: inline-block !important;
+}
+
+.activity-badge:hover {
+    background-color: #1a5d3b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.info-column ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.info-column ul li {
+    position: relative;
+    padding-right: 25px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.info-column ul li::before {
+    content: "•";
+    position: absolute;
+    right: 0;
+    color: #1a5d3b;
+    font-size: 1.8rem;
+    line-height: 1;
+    top: -4px;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-list li {
+    position: relative;
+    padding-right: 25px;
+    margin-bottom: 10px;
+}
+
+.info-list li::before {
+    content: "•";
+    color: var(--primary-green);
+    position: absolute;
+    right: 0;
+    font-size: 1.5rem;
+}
+
 .info-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -331,7 +404,7 @@ body.night-mode {
 .info-column ul {
     line-height: 1.8;
     font-size: 1.1rem;
-    padding-right: 20px; 
+    padding-right: 20px;
 }
 
 .mini-gallery {
@@ -391,7 +464,7 @@ body.night-mode {
 .login-box {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     width: 420px;
     overflow: hidden;
 }
@@ -478,20 +551,62 @@ body.night-mode {
     padding: 30px 5%;
 }
 
+
+
+.actions-cell {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px !important;
+    min-width: 180px;
+}
+
+.btn-edit,
+.btn-delete {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: white !important;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+}
+
 .success-msg {
     background-color: #d4edda;
     color: #155724;
     padding: 15px;
     border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: right;
+    margin: 20px 0;
+    text-align: center;
+    border: 1px solid #c3e6cb;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: block;
+}
+
+/* Info Message Styling (Blue) */
+.alert-info-banner {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #bee5eb;
+    font-weight: bold;
+    text-align: center;
 }
 
 .dashboard-container {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .dashboard-container h2 {
@@ -531,7 +646,8 @@ body.night-mode {
     margin-top: 20px;
 }
 
-.dashboard-table th, .dashboard-table td {
+.dashboard-table th,
+.dashboard-table td {
     padding: 12px;
     border: 1px solid #ddd;
     text-align: right;
@@ -556,7 +672,7 @@ body.night-mode {
 }
 
 .btn-edit:hover {
-    background-color: #1a5e3a;
+    background-color: var(--primary-green);
 }
 
 .btn-delete {
@@ -594,4 +710,182 @@ body.night-mode {
 .night-mode .success-msg {
     background-color: #1e3a2a;
     color: #afd4ac;
+}
+
+/* --- Container for Admin Forms (add-update) --- */
+/* --- Add Place Page Styling --- */
+
+.add-main,
+.update-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* --- Breadcrumb Styling --- */
+.breadcrumb {
+    width: 90%;
+    max-width: 1200px;
+    margin: 25px auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    color: #777;
+    padding: 0 10px;
+}
+
+.breadcrumb a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #2c7a4f;
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    color: #ccc;
+    font-size: 0.9rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.breadcrumb .current-page {
+    color: #444;
+    font-weight: 500;
+}
+
+.night-mode .breadcrumb a {
+    color: #afd4ac;
+}
+
+.night-mode .breadcrumb .current-page {
+    color: #eee;
+}
+
+.admin-container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    direction: rtl;
+}
+
+.admin-container h2 {
+    color: var(--primary-green);
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.admin-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-container label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    display: block;
+}
+
+.admin-container input[type="text"],
+.admin-container input[type="file"],
+.admin-container textarea,
+.admin-container select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background-color: #fcfcfc;
+}
+
+.admin-container textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.admin-container hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.admin-container h3 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.admin-container .btn-main {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.admin-container .btn-main:hover {
+    background-color: #145230;
+}
+
+/* --- Night Mode Support --- */
+.night-mode .admin-container {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.night-mode .admin-container label,
+.night-mode .admin-container h3 {
+    color: #ddd;
+}
+
+.night-mode .admin-container input,
+.night-mode .admin-container textarea,
+.night-mode .admin-container select {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: white;
+}
+
+
+/* --- Details Page Info List --- */
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.info-list li {
+    position: relative;
+    padding-right: 25px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444;
+}
+
+.info-list li::before {
+    content: '•';
+    position: absolute;
+    right: 0;
+    color: #1a5d3b;
+    font-weight: bold;
+    font-size: 20px;
 }

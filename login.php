@@ -5,8 +5,8 @@ include 'datab.php';
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     $query = "SELECT * FROM admins WHERE username = '$username' AND password = '$password'";
     $result = mysqli_query($conn, $query);
