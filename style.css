@@ -448,9 +448,12 @@ body.night-mode {
 
 .night-mode .info-title {
     border-bottom-color: #444;
-    color: #afd4ac;
+    color: #afd4ac !important;
 }
 
+.night-mode .details-card-content h1 {  
+    color: #afd4ac !important;
+}
 
 /* --- Admin Login --- */
 .login-main {
@@ -649,13 +652,13 @@ body.night-mode {
 .dashboard-table th,
 .dashboard-table td {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd88;
     text-align: right;
 }
 
 .dashboard-table th {
-    background: linear-gradient(135deg, #1a5e3a, #2e8b57);
-    color: white;
+    background: linear-gradient( 0deg, rgba(197, 255, 222, 0.61), rgba(86, 149, 113, 0.774));
+    color: rgb(18, 52, 33);
 }
 
 .dashboard-table tr:nth-child(even) {
@@ -694,7 +697,7 @@ body.night-mode {
 }
 
 .night-mode .dashboard-table th {
-    background: linear-gradient(135deg, #1a5e3a, #2e8b57);
+    background: linear-gradient(0deg, #1a5e3a, #2e8b57);
     color: white;
 }
 
@@ -888,4 +891,25 @@ body.night-mode {
     color: #1a5d3b;
     font-weight: bold;
     font-size: 20px;
+}
+
+.btn-view {
+    background-color: #285c32;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: #1b432c;
+    color: white;
+}
+
+.night-mode h2,h1 {
+    color: #afd4ac;
 }
