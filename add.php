@@ -2,6 +2,12 @@
 <?php
 session_start();
 include 'datab.php';
+
+// make sure admin is logged in
+if (!isset($_SESSION['admin'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
