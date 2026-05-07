@@ -65,6 +65,8 @@ include 'dashboard_process.php';
                         <td><?php echo $row['category']; ?></td>
                         <td><?php echo $row['description']; ?></td>
                         <td class="actions-cell">
+                            <a href="details.php?id=<?php echo $row['id']; ?>" class="btn-view" target="_blank">عرض الصفحة</a>
+                            
                             <a href="update.php?id=<?php echo $row['id']; ?>" class="btn-edit">تعديل</a>
                             
                             <a href="dashboard.php?delete=<?php echo $row['id']; ?>" 
