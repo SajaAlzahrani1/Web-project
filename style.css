@@ -20,8 +20,9 @@ main {
     flex: 1;
     /* makes the main area push the footer down */
 }
-
-
+h1 {
+    color: #285c32 ;
+}
 .night-mode {
     background-color: var(--dark-bg);
     color: white;
