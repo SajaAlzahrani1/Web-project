@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p class="error-msg"><?php echo $error; ?></p>
             <?php endif; ?>
 
-            <form method="POST">
+            <form method="POST" onsubmit="return validateLogin()">
                 <label>اسم المستخدم</label>
                 <input type="text" name="username" placeholder="مثال: admin" required>
 
