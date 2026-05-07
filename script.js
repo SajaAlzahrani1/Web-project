@@ -62,9 +62,31 @@ function filterRegions() {
     updateGallery();
 }
 
-// Validation for ALL required fields 
+// Login Form Validation
+function validateLogin() {
+    let username = document.querySelector('[name="username"]');
+    let password = document.querySelector('[name="password"]');
+
+    username.setCustomValidity("");
+    password.setCustomValidity("");
+
+    if (username.value.trim() === "") {
+        username.setCustomValidity("يرجى تعبئة جميع الحقول");
+        username.reportValidity();
+        return false;
+    }
+
+    if (password.value.trim() === "") {
+        password.setCustomValidity("يرجى تعبئة جميع الحقول");
+        password.reportValidity();
+        return false;
+    }
+
+    return true;
+}
+
+// Add/Edit Form Validation
 function validateForm() {
-    // Fetching field values from the form
     var name = document.forms["addForm"]["place_name"].value;
     var mainImg = document.forms["addForm"]["main_image"].value;
     var desc = document.forms["addForm"]["description"].value;
@@ -74,12 +96,10 @@ function validateForm() {
     var facts = document.forms["addForm"]["facts"].value;
     var gallery1 = document.forms["addForm"]["gallery_img1"].value;
 
-    // Check if any of these mandatory fields are empty
     if (name == "" || mainImg == "" || desc == "" || category == "" || activities == "" || landmarks == "" || facts == "" || gallery1 == "") {
         alert("يرجى تعبئة كافة الحقول، بما في ذلك حقل الحقائق.");
         return false;
     }
 
-    // Return true if everything is filled
     return true;
 }
