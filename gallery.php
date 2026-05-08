@@ -26,16 +26,16 @@ include 'datab.php';
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
+        <section class="hero-gallery">
+            <div class="hero-content-gallery">
                 <h1 id="welcome-heading">معرض المناطق</h1>
                 <p>ابحث أو صف النتائج ثم اضغط على أي منطقة للانتقال إلى صفحة التفاصيل</p>
             </div>
 
-            <div class="controls" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">    
+            <div class="controls" >    
                 
-            <div class="search-container">
-                    <input type="text" id="search-input" placeholder="ابحث عن منطقة او مدينة..." onkeyup="searchRegions()">
+                <div class="search-container">
+                        <input type="text" id="search-input" placeholder="ابحث عن منطقة او مدينة..." onkeyup="searchRegions()">
                 </div>
 
                 <div class="filter-container">
@@ -49,12 +49,12 @@ include 'datab.php';
                     </select>
                 </div>
 
-                <?php
-                $count_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM regions");
-                $count_data = mysqli_fetch_assoc($count_query);
-                $total_regions = $count_data['total'];
-                ?>
-                <p>عدد النتائج: <span id="result-count"><?php echo $total_regions; ?></span></p>
+                    <?php
+                    $count_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM regions"); // count regions
+                    $count_data = mysqli_fetch_assoc($count_query); // turn result into php readable (list)
+                    $total_regions = $count_data['total'];
+                    ?>
+                    <p>عدد النتائج: <span id="result-count"><?php echo $total_regions; ?></span></p>
 
             </div>
 
@@ -65,8 +65,8 @@ include 'datab.php';
             $query = "SELECT * FROM regions";
             $result = mysqli_query($conn, $query);
 
-            if ($result && mysqli_num_rows($result) > 0) {
-                while($row = mysqli_fetch_assoc($result)) {
+            if ( $result && mysqli_num_rows($result) > 0 ) {
+                while( $row = mysqli_fetch_assoc($result) ) {
                     echo '<a href="details.php?id=' . $row['id'] . '" class="region-card" data-category="' . $row['category'] . '">';
                     echo '  <img src="images/' . $row['main_image'] . '" alt="' . $row['name'] . '">';
                     echo '  <div class="card-info">';
