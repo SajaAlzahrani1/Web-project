@@ -1,13 +1,15 @@
 :root {
-    --primary-green: #1a5e3a;
-    --dark-bg: #121212;
-    --light-bg: #fafafa;
+    --primary-color: #5d426f;
+    --light-bg: #d7c4e4;
+    
+    /* dark mode text and background */
+    --primary-color-dark: #e9d7f5;
+    --dark-bg: #321845;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: var(--light-bg);
     transition: 0.3s;
     /* for the sticky footer */
     display: flex;
@@ -17,29 +19,38 @@ body {
 }
 
 main {
-    flex: 1;
-    /* makes the main area push the footer down */
+    color: var(--primary-color);    
+    background-image: url('images/bg.jpg');
+    background-size: cover;
+    background-position: center; 
+ 
+    flex: 1; /* makes the main area push the footer down */
 }
-h1 {
-    color: #285c32 ;
+
+.night-mode main{   
+    color: white;
+    background-image: url('images/bg-dark.jpg');
+    background-size: cover;
+    background-position: center; 
 }
-.night-mode {
+
+.night-mode {   
+    color: white;
     background-color: var(--dark-bg);
-    color: white;
-
 }
 
-.night-mode .feature-card {
-    background-color: #1e1e1e;
-    color: white;
 
-}
+/* --- header & navigation --- */
 
 header {
-    background-color: var(--primary-green);
-    color: white;
+    background-color: white;
+    color: var(--primary-color);
     padding: 1rem 0;
+}
 
+.night-mode header {
+    background-color: var(--bg-dark);
+    color: white;
 }
 
 .nav-container {
@@ -47,6 +58,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 3%;
+    font-weight: bold;
 }
 
 nav ul {
@@ -57,21 +69,26 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-
-
 }
 
 nav ul li a:hover {
-    color: rgb(191, 228, 209);
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    color: rgb(161, 62, 194);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.385);
+}
 
+.night-mode ul li a:visited {
+    color: rgb(224, 184, 237);
+}
+
+.night-mode nav ul li a:hover {
+    color: rgb(161, 62, 194);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.385);
 }
 
 #night-mode-btn {
     font-family: inherit;
-    background-color: #1a3020;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     display: flex;
@@ -82,31 +99,54 @@ nav ul li a:hover {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 #night-mode-btn:hover {
-    background-color: rgba(255, 255, 255, 0.59);
+    background-color: rgb(230, 191, 232);
     box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.323);
-    color: var(--primary-green);
+    color: var(--primary-color);
 }
 
 .night-mode #night-mode-btn {
     box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.1);
-    background-color: #afd4ac;
-    color: #2c3e50;
+    background-color: rgb(230, 191, 232);
+    color: var(--primary-color);
 }
 
 .night-mode #night-mode-btn:hover {
     box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.323);
-    background-color: #c2e0c6e1;
+    background-color: var(--primary-color);
+    color: white;
 }
 
+/* --- Homepage --- */
 .hero {
-    background-color: #e8f5e9;
+    background-color: transparent;
     padding: 40px 20px;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
 
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 50px 30px;
 }
 
 .hero-image img {
@@ -118,19 +158,8 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
-body.night-mode {
-    background-color: #121212;
-    color: white;
-}
-
-.night-mode .hero {
-    background-color: #272929;
-    color: white;
-
-}
-
 .btn-main {
-    background-color: var(--primary-green);
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 25px;
     text-decoration: none;
@@ -138,29 +167,36 @@ body.night-mode {
     display: inline-block;
     margin-top: 20px;
     transition: all 0.3s ease;
-
+    font-weight: bold;
 }
 
 .btn-main:hover {
-    background-color: #1e5c3a;
-    box-shadow: 0 0 10px 5px rgba(26, 92, 58, 0.287);
+    background-color: var(--primary-color-dark);
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.323);
+    color: var(--primary-color);
+}
+
+.night-mode .btn-main{
+    background-color: white;
+    color: var(--primary-color);
 }
 
 .night-mode .btn-main:hover {
-    background-color: #1e5c3a;
-    box-shadow: 0 0 10px 5px rgba(228, 248, 237, 0.401);
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.095);
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .features {
+    background-color: transparent;
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 20px;
-
 }
 
 .feature-card {
-    background: white;
+    background: var(--light-bg);
     padding: 20px;
     border-radius: 8px;
     width: 100%;
@@ -168,15 +204,53 @@ body.night-mode {
 
 }
 
-#footer-tag {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--primary-green);
+.night-mode .feature-card {
+    background-color: var(--primary-color-dark);
+    color: var(--dark-bg);
+}
+.night-mode .features {
+    background-color:transparent;
     color: white;
 }
 
+#footer-tag {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.night-mode #footer-tag {
+    background-color: var(--bg-dark);
+    color: white;
+}
 
 /* --- Gallery --- */
+.hero-gallery {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-gallery h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-gallery p {
+    font-size: 1.2rem;
+    font-weight:bold ;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 1em;
+    padding: 20px 40px;
+    margin: 0 5% 0 5%;
+}
+
 .regions-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
@@ -191,10 +265,8 @@ body.night-mode {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     color: inherit;
-    /* based on night/day mode */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: block;
-    /* Required for the <a> tag to act like a container */
 }
 
 .region-card:hover {
@@ -206,7 +278,7 @@ body.night-mode {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    border-bottom: 3px solid var(--primary-green);
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .card-info {
@@ -216,13 +288,13 @@ body.night-mode {
 
 .card-info h3 {
     margin: 0 0 10px 0;
-    color: var(--primary-green);
+    color: var(--primary-color);
 }
 
 .card-info .category {
     display: inline-block;
-    background-color: #e8f5e9;
-    color: var(--primary-green);
+    background-color: #f9f0ff;
+    color: var(--primary-color);
     padding: 3px 10px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -235,7 +307,6 @@ body.night-mode {
     font-size: 0.95rem;
 }
 
-/* --- Search & Filter Inputs --- */
 #search-input,
 #region-filter {
     padding: 12px;
@@ -244,33 +315,39 @@ body.night-mode {
     font-family: inherit;
     font-size: 1rem;
     width: 250px;
+    background-color: #dbc7e3;
+    color: var(--dark-bg);
 }
 
 
-/* --- Night Mode New Elements --- */
+/* --- Night Mode Gallery --- */
+.night-mode .controls{
+    background-color: var(--dark-bg);
+}
+
 .night-mode .region-card {
-    background-color: #1e1e1e;
+    background-color: var(--dark-bg);
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
 }
 
 .night-mode .card-info h3 {
-    color: #afd4ac;
+    color: white;
 }
 
 .night-mode .card-info p {
-    color: #bbb;
+    color: var(--primary-color-dark);
 }
 
 .night-mode .card-info .category {
-    background-color: #2a3b30;
-    color: #afd4ac;
+    background-color: rgba(247, 198, 255, 0.208);
+    color: var(--primary-color-dark);
 }
 
 .night-mode #search-input,
 .night-mode #region-filter {
-    background-color: #2a2a2a;
+    background-color: #4f2c5c;
     color: white;
-    border-color: #444;
+    border-color: #ffffff2b;
 }
 
 /* --- Details Page --- */
@@ -295,7 +372,7 @@ body.night-mode {
     height: 350px;
     object-fit: cover;
     display: block;
-    border-bottom: 4px solid var(--primary-green);
+    border-bottom: 4px solid var(--primary-color);
 }
 
 .details-card-content {
@@ -303,8 +380,8 @@ body.night-mode {
 }
 
 .category-badge {
-    background-color: #e8f5e9;
-    color: var(--primary-green);
+    background-color: #f9f0ff;
+    color: var(--primary-color);
     padding: 8px 20px;
     border-radius: 25px;
     font-weight: bold;
@@ -314,11 +391,9 @@ body.night-mode {
 .details-description {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #444;
+    color: var(--dark-bg);
     margin-bottom: 40px;
 }
-
-
 
 .activities-wrapper {
     display: flex !important;
@@ -328,18 +403,16 @@ body.night-mode {
 }
 
 .activity-badge {
-    background-color: #e8f5e9 !important;
-    color: #1a5d3b !important;
+    background-color: #ffeeff !important;
+    color: var(--primary-color) !important;
     padding: 8px 18px !important;
     border-radius: 50px !important;
     font-weight: bold;
-    border: 1.5px solid #1a5d3b !important;
+    border: 1.5px solid var(--primary-color) !important;
     display: inline-block !important;
 }
 
 .activity-badge:hover {
-    background-color: #1a5d3b;
-    color: white;
     transform: translateY(-2px);
 }
 
@@ -361,7 +434,7 @@ body.night-mode {
     content: "•";
     position: absolute;
     right: 0;
-    color: #1a5d3b;
+    color: var(--dark-bg);
     font-size: 1.8rem;
     line-height: 1;
     top: -4px;
@@ -380,7 +453,7 @@ body.night-mode {
 
 .info-list li::before {
     content: "•";
-    color: var(--primary-green);
+    color: var(--primary-color);
     position: absolute;
     right: 0;
     font-size: 1.5rem;
@@ -396,8 +469,8 @@ body.night-mode {
 }
 
 .info-title {
-    color: var(--primary-green);
-    border-bottom: 2px solid #e8f5e9;
+    color: var(--primary-color);
+    border-bottom: 2px solid rgb(255, 255, 255);
     padding-bottom: 10px;
     margin-top: 0;
 }
@@ -430,30 +503,32 @@ body.night-mode {
 
 /* --- Night Mode Details Card --- */
 .night-mode .details-card-large {
-    background-color: #1e1e1e;
+    background-color: var(--dark-bg);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .night-mode .details-description {
-    color: #ddd;
+    color: var(--light-bg);
 }
 
 .night-mode .info-grid {
-    background-color: #2a2a2a;
+    background-color: var(--primary-color);
 }
 
 .night-mode .category-badge {
-    background-color: #2a3b30;
-    color: #afd4ac;
+    background-color:rgba(247, 198, 255, 0.208);
+    color: white;
 }
 
 .night-mode .info-title {
-    border-bottom-color: #444;
-    color: #afd4ac !important;
+    border-bottom-color: var(--dark-bg);
+    color: white;
 }
 
-.night-mode .details-card-content h1 {  
-    color: #afd4ac !important;
+.night-mode .activity-badge {
+    background-color: var(--primary-color) !important;
+    color: rgb(254, 211, 255) !important;
+    border-color: rgb(250, 210, 255) !important;
 }
 
 /* --- Admin Login --- */
@@ -474,7 +549,7 @@ body.night-mode {
 }
 
 .login-box-header {
-    background: linear-gradient(135deg, #1a5e3a, #2e8b57);
+    background: linear-gradient(135deg, var(--dark-bg), var(--primary-color) );
     color: white;
     padding: 20px;
     text-align: center;
@@ -507,16 +582,17 @@ body.night-mode {
 .login-box button {
     width: 100%;
     padding: 12px;
-    background-color: var(--primary-green);
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .login-box button:hover {
-    background-color: #145230;
+    background-color: var(--dark-bg);
 }
 
 .error-msg {
@@ -525,19 +601,29 @@ body.night-mode {
     text-align: center;
 }
 
-
 /* --- Night Mode Admin Login --- */
-.night-mode .login-main {
-    background-color: #1a1a1a;
+.night-mode .login-box-header {
+    background: linear-gradient(135deg, var(--light-bg), white );
+    color: var(--dark-bg);
+}
+.night-mode .login-box button {
+    background-color: white;
+    color: var(--dark-bg);
+}
+
+.night-mode .login-box button:hover {
+    background-color: var(--light-bg);
+    color: var(--dark-bg);
 }
 
 .night-mode .login-box {
-    background-color: #1e1e1e;
+    background-color: var(--dark-bg);
     color: white;
 }
 
 .night-mode .login-box-body {
-    background-color: #1e1e1e;
+    background-color: var(--dark-bg);
+
 }
 
 .night-mode .login-box label {
@@ -554,8 +640,6 @@ body.night-mode {
 .dashboard-main {
     padding: 30px 5%;
 }
-
-
 
 .actions-cell {
     display: flex;
@@ -594,7 +678,6 @@ body.night-mode {
     display: block;
 }
 
-/* Info Message Styling (Blue) */
 .alert-info-banner {
     background-color: #d1ecf1;
     color: #0c5460;
@@ -614,13 +697,29 @@ body.night-mode {
 }
 
 .dashboard-container h2 {
-    color: var(--primary-green);
     text-align: right;
+}
+
+.btn-view {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: #422f55;
+    color: white;
 }
 
 .btn-add {
     display: inline-block;
-    background-color: var(--primary-green);
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
@@ -629,12 +728,12 @@ body.night-mode {
 }
 
 .btn-add:hover {
-    background-color: #145230;
+    background-color: var(--dark-bg);
 }
 
 .btn-logout {
     background-color: #dc3545;
-    color: white;
+    color: white !important;
     padding: 8px 16px;
     border-radius: 8px;
     text-decoration: none;
@@ -642,6 +741,7 @@ body.night-mode {
 
 .btn-logout:hover {
     background-color: #b02a37;
+    color: white !important;
 }
 
 .dashboard-table {
@@ -653,13 +753,13 @@ body.night-mode {
 .dashboard-table th,
 .dashboard-table td {
     padding: 12px;
-    border: 1px solid #dddddd88;
+    border: 1px solid #dddddda4;
     text-align: right;
 }
 
 .dashboard-table th {
-    background: linear-gradient( 0deg, rgba(197, 255, 222, 0.61), rgba(86, 149, 113, 0.774));
-    color: rgb(18, 52, 33);
+    color: var(--dark-bg);
+    background: linear-gradient( 0deg, var(--primary-color-dark) , rgba(203, 168, 214, 0.774));
 }
 
 .dashboard-table tr:nth-child(even) {
@@ -676,7 +776,7 @@ body.night-mode {
 }
 
 .btn-edit:hover {
-    background-color: var(--primary-green);
+    background-color: #1a5534 ;
 }
 
 .btn-delete {
@@ -692,23 +792,33 @@ body.night-mode {
 }
 
 /* --- Night Mode Dashboard --- */
+.night-mode .btn-add:hover{
+    background-color: var(--light-bg);
+    color: var(--dark-bg);
+}
+
 .night-mode .dashboard-container {
-    background-color: #1e1e1e;
-    color: white;
+    background-color: var(--dark-bg);
 }
 
 .night-mode .dashboard-table th {
-    background: linear-gradient(0deg, #1a5e3a, #2e8b57);
+    background: linear-gradient(0deg, var(--primary-color) , #7e5b83);
     color: white;
+}
+.night-mode .dashboard-table th,
+.night-mode .dashboard-table td {
+    padding: 12px;
+    border: 1px solid #dddddd1c;
+    text-align: right;
 }
 
 .night-mode .dashboard-table td {
-    border-color: #444;
+    border-color: #a1a1a133;
     color: white;
 }
 
 .night-mode .dashboard-table tr:nth-child(even) {
-    background-color: #2a2a2a;
+    background-color: #5f2f6364;
 }
 
 .night-mode .success-msg {
@@ -716,9 +826,7 @@ body.night-mode {
     color: #afd4ac;
 }
 
-/* --- Container for Admin Forms (add-update) --- */
-/* --- Add Place Page Styling --- */
-
+/* --- Admin Forms (add-update) --- */
 .add-main,
 .update-main {
     display: flex;
@@ -727,7 +835,6 @@ body.night-mode {
     padding: 20px 0;
 }
 
-/* --- Breadcrumb Styling --- */
 .breadcrumb {
     width: 90%;
     max-width: 1200px;
@@ -741,14 +848,14 @@ body.night-mode {
 }
 
 .breadcrumb a {
-    color: var(--primary-green);
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
 }
 
 .breadcrumb a:hover {
-    color: #2c7a4f;
+    color: rgb(183, 120, 217);
     text-decoration: underline;
 }
 
@@ -764,13 +871,6 @@ body.night-mode {
     font-weight: 500;
 }
 
-.night-mode .breadcrumb a {
-    color: #afd4ac;
-}
-
-.night-mode .breadcrumb .current-page {
-    color: #eee;
-}
 
 .admin-container {
     width: 90%;
@@ -783,9 +883,8 @@ body.night-mode {
 }
 
 .admin-container h2 {
-    color: var(--primary-green);
     margin-bottom: 30px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid var(--light-bg);
     padding-bottom: 10px;
 }
 
@@ -800,6 +899,8 @@ body.night-mode {
     color: #333;
     display: block;
 }
+
+
 
 .admin-container input[type="text"],
 .admin-container input[type="file"],
@@ -823,7 +924,7 @@ body.night-mode {
 
 .admin-container hr {
     border: 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--light-bg);
     margin: 20px 0;
 }
 
@@ -835,7 +936,7 @@ body.night-mode {
 .admin-container .btn-main {
     width: 100%;
     padding: 15px;
-    background-color: var(--primary-green);
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 10px;
@@ -847,13 +948,29 @@ body.night-mode {
 }
 
 .admin-container .btn-main:hover {
-    background-color: #145230;
+    background-color: var(--dark-bg);
 }
 
-/* --- Night Mode Support --- */
+
+/* --- Night Mode Admin Forms --- */
+
+.night-mode .breadcrumb{
+    color: rgba(255, 255, 255, 0.64);
+}
+.night-mode .breadcrumb a {
+    color: var(--light-bg);
+}
+.night-mode .breadcrumb a:hover {
+    color: rgb(183, 120, 217);
+}
+
+.night-mode .breadcrumb .current-page {
+    color: #eee;
+}
+
 .night-mode .admin-container {
-    background-color: #1e1e1e;
-    color: white;
+    background-color: var(--dark-bg);
+        color: var(--light-bg) !important;
 }
 
 .night-mode .admin-container label,
@@ -861,56 +978,15 @@ body.night-mode {
     color: #ddd;
 }
 
+
 .night-mode .admin-container input,
 .night-mode .admin-container textarea,
 .night-mode .admin-container select {
-    background-color: #2a2a2a;
-    border-color: #444;
+    background-color: #4f2c5c;
     color: white;
+    border-color: #ffffff2b;
 }
 
-
-/* --- Details Page Info List --- */
-.info-list {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0;
-}
-
-.info-list li {
-    position: relative;
-    padding-right: 25px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #444;
-}
-
-.info-list li::before {
-    content: '•';
-    position: absolute;
-    right: 0;
-    color: #1a5d3b;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.btn-view {
-    background-color: #285c32;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-left: 5px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-view:hover {
-    background-color: #1b432c;
-    color: white;
-}
-
-.night-mode h2,h1 {
-    color: #afd4ac;
+.night-mode .admin-container .btn-main:hover {
+    background-color: rgb(132, 90, 141);
 }
