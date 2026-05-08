@@ -463,7 +463,7 @@ nav ul li a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    background-color: var(--light-bg);
+    background-color: #f9f0ff;
     padding: 25px;
     border-radius: 12px;
 }
