@@ -9,6 +9,8 @@ if (!isset($_SESSION['admin'])) {
 }
 
 if (isset($_POST['submit_update'])) {
+    // $_POST to get input
+    // mysqli_real_escape_string to treat all input as text not SQL commands
     $id = intval($_POST['id']);
     $name = mysqli_real_escape_string($conn, $_POST['place_name']);
     $category = mysqli_real_escape_string($conn, $_POST['category']);
@@ -17,19 +19,21 @@ if (isset($_POST['submit_update'])) {
     $activities = mysqli_real_escape_string($conn, $_POST['activities']);
     $facts = mysqli_real_escape_string($conn, $_POST['facts']);
 
-    // if no new images, use the old ones
+    
     $old_data_query = mysqli_query($conn, "SELECT * FROM regions WHERE id = $id");
     $old_data = mysqli_fetch_assoc($old_data_query);
 
     $target_dir = "images/";
 
     function handleUpload($fileName, $oldName, $target_dir) {
-        if (!empty($_FILES[$fileName]['name'])) {
+    
+        if ( !empty($_FILES[$fileName]['name']) ) { // $_FILES for multipart/form-data
+
             $new_name = basename($_FILES[$fileName]['name']);
             move_uploaded_file($_FILES[$fileName]['tmp_name'], $target_dir . $new_name);
             return $new_name;
         }
-        return $oldName;
+        return $oldName; // if no new images, use the old ones
     }
 
     $main_image = handleUpload('main_image', $old_data['main_image'], $target_dir);
