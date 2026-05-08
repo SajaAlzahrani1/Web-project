@@ -58,7 +58,7 @@ if (!$row) {
         
         <div class="admin-container update-layout" style="display: flex; gap: 30px;">
             <div class="current-info" style="flex: 1; padding: 20px; border-radius: 10px;">
-                <h3 style="color: #1a5e3a;">المكان المحدد للتحديث</h3>
+                <h3>المكان المحدد للتحديث</h3>
                 <p><strong>اسم المكان:</strong></p>
                 <h2 style="margin-top: 0;"><?php echo $row['name']; ?></h2>
 
