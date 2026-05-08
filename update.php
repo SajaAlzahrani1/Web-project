@@ -90,7 +90,7 @@ if (!$row) {
 
             <div class="form-section" style="flex: 2;">
                 <h2>تعديل البيانات</h2>
-                <form action="update_process.php" method="POST" enctype="multipart/form-data">
+                <form action="update_process.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()>
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 
                     <label>اسم المكان:</label>
