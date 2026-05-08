@@ -7,11 +7,11 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
     exit();
 }
 
-$region_id = intval($_GET['id']);
+$region_id = intval($_GET['id']); // intval to prevent SQL injection
 
 // Fetch the specific region data using the ID
 $query = "SELECT * FROM regions WHERE id = $region_id";
-$result = mysqli_query($conn, $query);
+$result = mysqli_query($conn, $query); 
 
 if (mysqli_num_rows($result) > 0) {
     $region = mysqli_fetch_assoc($result);
