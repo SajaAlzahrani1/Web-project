@@ -23,6 +23,7 @@ main {
     background-image: url('images/bg.jpg');
     background-size: cover;
     background-position: center; 
+    background-attachment: fixed;
  
     flex: 1; /* makes the main area push the footer down */
 }
@@ -32,6 +33,7 @@ main {
     background-image: url('images/bg-dark.jpg');
     background-size: cover;
     background-position: center; 
+    background-attachment: fixed;
 }
 
 .night-mode {   
