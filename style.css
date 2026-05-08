@@ -1,7 +1,7 @@
 :root {
     --primary-color: #5d426f;
     --light-bg: #d7c4e4;
-    
+
     /* dark mode text and background */
     --primary-color-dark: #e9d7f5;
     --dark-bg: #321845;
@@ -19,24 +19,25 @@ body {
 }
 
 main {
-    color: var(--primary-color);    
+    color: var(--primary-color);
     background-image: url('images/bg.jpg');
     background-size: cover;
-    background-position: center; 
+    background-position: center;
     background-attachment: fixed;
- 
-    flex: 1; /* makes the main area push the footer down */
+
+    flex: 1;
+    /* makes the main area push the footer down */
 }
 
-.night-mode main{   
+.night-mode main {
     color: white;
     background-image: url('images/bg-dark.jpg');
     background-size: cover;
-    background-position: center; 
+    background-position: center;
     background-attachment: fixed;
 }
 
-.night-mode {   
+.night-mode {
     color: white;
     background-color: var(--dark-bg);
 }
@@ -75,8 +76,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: rgb(161, 62, 194);
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.385);
+    color: rgb(158, 127, 169);
+    text-shadow: 0px 0px 10px var(--light-bg);
 }
 
 .night-mode ul li a:visited {
@@ -84,8 +85,8 @@ nav ul li a:hover {
 }
 
 .night-mode nav ul li a:hover {
-    color: rgb(161, 62, 194);
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.385);
+    color: rgb(175, 130, 193);
+    text-shadow: 0px 0px 10px rgb(224, 190, 235);
 }
 
 #night-mode-btn {
@@ -178,7 +179,7 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
-.night-mode .btn-main{
+.night-mode .btn-main {
     background-color: white;
     color: var(--primary-color);
 }
@@ -210,8 +211,9 @@ nav ul li a:hover {
     background-color: var(--primary-color-dark);
     color: var(--dark-bg);
 }
+
 .night-mode .features {
-    background-color:transparent;
+    background-color: transparent;
     color: white;
 }
 
@@ -240,10 +242,10 @@ nav ul li a:hover {
 
 .hero-gallery p {
     font-size: 1.2rem;
-    font-weight:bold ;
+    font-weight: bold;
 }
 
-.controls{
+.controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -273,7 +275,7 @@ nav ul li a:hover {
 
 .region-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px var(--light-bg);
 }
 
 .region-card img {
@@ -323,7 +325,7 @@ nav ul li a:hover {
 
 
 /* --- Night Mode Gallery --- */
-.night-mode .controls{
+.night-mode .controls {
     background-color: var(--dark-bg);
 }
 
@@ -405,18 +407,15 @@ nav ul li a:hover {
 }
 
 .activity-badge {
-    background-color: #ffeeff !important;
+    background-color: #f3e6f8 !important;
     color: var(--primary-color) !important;
     padding: 8px 18px !important;
     border-radius: 50px !important;
     font-weight: bold;
-    border: 1.5px solid var(--primary-color) !important;
+    border: 1.5px solid #dcc4e6 !important;
     display: inline-block !important;
 }
 
-.activity-badge:hover {
-    transform: translateY(-2px);
-}
 
 .info-column ul {
     list-style: none;
@@ -501,6 +500,8 @@ nav ul li a:hover {
 
 .mini-gallery img:hover {
     transform: scale(1.02);
+    color: var(--primary-color);
+
 }
 
 /* --- Night Mode Details Card --- */
@@ -518,7 +519,7 @@ nav ul li a:hover {
 }
 
 .night-mode .category-badge {
-    background-color:rgba(247, 198, 255, 0.208);
+    background-color: rgba(247, 198, 255, 0.208);
     color: white;
 }
 
@@ -551,7 +552,7 @@ nav ul li a:hover {
 }
 
 .login-box-header {
-    background: linear-gradient(135deg, var(--dark-bg), var(--primary-color) );
+    background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
     color: white;
     padding: 20px;
     text-align: center;
@@ -605,9 +606,10 @@ nav ul li a:hover {
 
 /* --- Night Mode Admin Login --- */
 .night-mode .login-box-header {
-    background: linear-gradient(135deg, var(--light-bg), white );
+    background: linear-gradient(135deg, var(--light-bg), white);
     color: var(--dark-bg);
 }
+
 .night-mode .login-box button {
     background-color: white;
     color: var(--dark-bg);
@@ -761,7 +763,7 @@ nav ul li a:hover {
 
 .dashboard-table th {
     color: var(--dark-bg);
-    background: linear-gradient( 0deg, var(--primary-color-dark) , rgba(203, 168, 214, 0.774));
+    background: linear-gradient(0deg, var(--primary-color-dark), rgba(203, 168, 214, 0.774));
 }
 
 .dashboard-table tr:nth-child(even) {
@@ -778,7 +780,7 @@ nav ul li a:hover {
 }
 
 .btn-edit:hover {
-    background-color: #1a5534 ;
+    background-color: #1a5534;
 }
 
 .btn-delete {
@@ -794,7 +796,7 @@ nav ul li a:hover {
 }
 
 /* --- Night Mode Dashboard --- */
-.night-mode .btn-add:hover{
+.night-mode .btn-add:hover {
     background-color: var(--light-bg);
     color: var(--dark-bg);
 }
@@ -804,9 +806,10 @@ nav ul li a:hover {
 }
 
 .night-mode .dashboard-table th {
-    background: linear-gradient(0deg, var(--primary-color) , #7e5b83);
+    background: linear-gradient(0deg, var(--primary-color), #7e5b83);
     color: white;
 }
+
 .night-mode .dashboard-table th,
 .night-mode .dashboard-table td {
     padding: 12px;
@@ -956,12 +959,14 @@ nav ul li a:hover {
 
 /* --- Night Mode Admin Forms --- */
 
-.night-mode .breadcrumb{
+.night-mode .breadcrumb {
     color: rgba(255, 255, 255, 0.64);
 }
+
 .night-mode .breadcrumb a {
     color: var(--light-bg);
 }
+
 .night-mode .breadcrumb a:hover {
     color: rgb(183, 120, 217);
 }
@@ -972,7 +977,7 @@ nav ul li a:hover {
 
 .night-mode .admin-container {
     background-color: var(--dark-bg);
-        color: var(--light-bg) !important;
+    color: var(--light-bg) !important;
 }
 
 .night-mode .admin-container label,
