@@ -108,14 +108,12 @@ if (!$row) {
                     <label>الوصف المختصر:</label>
                     <textarea name="description" rows="2" required><?php echo $row['description']; ?></textarea>
 
-                    <label>الأنشطة (افصل بينهم بفاصلة):</label>
-                    <input type="text" name="activities" value="<?php echo $row['activities']; ?>" required>
-
+                    
                     <label>المعالم (افصل بينهم بفاصلة):</label>
                     <input type="text" name="landmarks" value="<?php echo $row['landmarks']; ?>" required>
 
                     <label>حقائق سريعة:</label>
-                    <textarea name="facts" rows="3" required><?php echo $row['facts']; ?></textarea>
+                    <textarea name="fun_facts" rows="3" required><?php echo $row['fun_facts']; ?></textarea>
 
                     <hr>
                     <h3>تحديث الصور (اتركها فارغة للاحتفاظ بالصور القديمة)</h3>
