@@ -132,6 +132,10 @@ if (!$row) {
         </div>
 
     </main>
+
+    <footer id="footer-tag">
+        <p>© اكتشف السعودية - جامعة الملك سعود</p>
+    </footer>
     <script src="script.js"></script>
 
 </body>
