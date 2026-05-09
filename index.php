@@ -28,7 +28,7 @@
                  <img id="main-image" src="images\ksa.jpg" alt="الرياض">
             </div>
             <div class="hero-content">
-                <h1 id="welcome-heading">أهلاً وسهلاً</h1>
+                <h1 id="welcome-heading"> تــمــشــى </h1>
                 <h2>موقع ثقافي تفاعلي للتعريف بالمملكة</h2>
                 <p>استكشف مناطق المملكة العربية السعودية وتعرف على أهم المعالم التاريخية والثقافية.</p>
                 <a href="gallery.php" class="btn-main">ابدأ الاستكشاف</a>
